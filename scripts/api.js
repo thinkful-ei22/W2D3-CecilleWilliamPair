@@ -11,10 +11,15 @@ const API = (function() {
     const newItem = JSON.stringify({
       name,
     });
-    
+    $.ajax({
+      'url': `${BASE_URL}/items`,
+      'method': 'POST',
+      'contentType': 'application/json',
+      'data': newItem,
+      'success': callback,
+    })
+
   };
-  
-  
   return {
     BASE_URL,
     getItems: myGetItems,
@@ -22,16 +27,8 @@ const API = (function() {
   };
 }());
 
-const settings = {
-  'url': `${API.BASE_URL}/items`, 
-  'method': 'POST',
-  'contentType': 'application/json',
-  'data': JSON.stringify({name: API.createItem()}),
-  'success': API.callback,
-};
 // API.getItems(function(data) {
 //   console.log(data);
 // });
 //
 // console.log(API.BASE_URL);
-$.ajax(settings);
