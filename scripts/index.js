@@ -16,7 +16,7 @@ $.getJSON('https://thinkful-list-api.herokuapp.com/ei-student/items', (response)
 //     console.log(items);
 //   });
 // });
-console.log('foo')
+/*console.log('foo')
 API.getItems((items) => {
   const item = items[0];
   console.log('Hello world', items);
@@ -25,3 +25,8 @@ API.getItems((items) => {
     console.log('updated!', data);
   });
 });
+*/
+/*const item = store.items[0];
+console.log('current name: ' + item.name);
+store.findAndUpdate(item.id, { name: 'foobar' });
+console.log('new name: ' + item.name); */
