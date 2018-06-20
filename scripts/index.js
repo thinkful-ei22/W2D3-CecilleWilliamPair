@@ -10,3 +10,9 @@ store.items.push(Item.create('apples'));
 $.getJSON('https://thinkful-list-api.herokuapp.com/ei-student/items', (response) => {
   console.log('api response:', response);
 });
+
+API.createItem('pears', (newItem) => {
+  API.getItems((items) => {
+    console.log(items);
+  });
+});
